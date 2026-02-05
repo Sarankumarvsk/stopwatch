@@ -1,0 +1,43 @@
+.circle {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.circle::before,
+.circle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid blue;
+  transform: scale(0.1);
+  opacity: 0;
+}
+
+.circle.running::before {
+  animation: wave 2s infinite;
+}
+
+.circle.running::after {
+  animation: wave 2s infinite;
+  animation-delay: 1s;   
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
