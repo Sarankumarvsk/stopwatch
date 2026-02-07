@@ -29,7 +29,9 @@
   animation: wave 2s infinite;
   animation-delay: 1s;   
 }
-
+.time{
+  color: white;
+}
 @keyframes wave {
   0% {
     transform: scale(0.1);
